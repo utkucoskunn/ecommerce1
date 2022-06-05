@@ -1,10 +1,8 @@
-<div class="main-content-wrapper d-flex clearfix">
-
-    <!-- Mobile Nav (max width 767px)-->
+ <!-- Mobile Nav (max width 767px)-->
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -20,16 +18,16 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.ejs"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/product-details">Product</a></li>
-                <li><a href="/cart">Cart</a></li>
-                <li><a href="/checkout">Checkout</a></li>
+                <li class=" <%= page_name==='index' && 'active'%> "><a href="/">Home</a></li>
+                <li class=" <%= page_name==='shop' && 'active'%> "><a href="/shop">Shop</a></li>
+                <li class=" <%= page_name==='product-details' && 'active'%> "><a href="/product-details">Product</a></li>
+                <li class=" <%= page_name==='cart' && 'active'%> "><a href="/cart">Cart</a></li>
+                <li class=" <%= page_name==='checkout' && 'active'%> "><a href="/checkout">Checkout</a></li>
             </ul>
         </nav>
         <!-- Button Group -->
@@ -51,4 +49,5 @@
             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
     </header>
+
     <!-- Header Area End -->
