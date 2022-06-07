@@ -1,11 +1,21 @@
 //*********require section**********
 const express=require('express')
 const ejs=require('ejs');
+const mongoose=require('mongoose');
+
 
 const pageRoute=require('./routes/pageRoute');
+const productRoute=require('./routes/productRoute');
 
 //*********connect db**************
-
+mongoose.connect('mongodb://localhost/ecommerce1-db', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(()=>{
+    console.log(('DB CONNECTED :)!'))
+}).catch((err)=>{
+    console.log(err)
+});
 
 
 
@@ -29,6 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //*********routes section**********
 app.use('/',pageRoute);
+app.use('/product-details',productRoute);
 
 
 //*********Port section**********
